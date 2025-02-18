@@ -65,11 +65,11 @@ python main.py
  ┣ 📜 encrypt.py      # Encryption logic
  ┣ 📜 decrypt.py      # Decryption logic
  ┣ 📜 README.md       # Project documentation
- ┗ 📂 assets/         # Folder for images and icons
+ ┗ 📜 logo.ico        # Application icon file
 ```
 
 ## 🤝 Contributing
-Contributions are welcome! Feel free to fork this repository and submit a pull request.
+Contributions are welcome! You can fix this repository and submit a pull request.
 
 ## 📜 License
 This project is licensed under the MIT License.
