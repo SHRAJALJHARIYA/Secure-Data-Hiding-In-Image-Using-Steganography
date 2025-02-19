@@ -69,6 +69,11 @@ def show_preview(label, file_path):
     label.configure(image=ctk_image)
     label.image = ctk_image  # Keep reference to prevent garbage collection
 
+copyright_label = customtkinter.CTkLabel(
+    root,text="© 2024 Shrajal. All rights reserved.",font=("Arial", 10)
+)
+copyright_label.pack(side="bottom", pady=5)
+
 
 
 root.mainloop()
