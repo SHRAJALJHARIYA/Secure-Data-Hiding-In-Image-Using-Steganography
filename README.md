@@ -19,7 +19,6 @@ This project combines cryptography and steganography to provide a secure way of 
 4. The decrypted message is displayed to the user.
 
 ## ✨ Features
-- **AES Encryption**: Ensures secure message encryption before embedding.
 - **Image Steganography**: Uses the Least Significant Bit (LSB) technique to embed messages into images.
 - **User-Friendly GUI**: Built with `customtkinter` for an intuitive interface.
 - **Encryption & Decryption**:
