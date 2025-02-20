@@ -30,8 +30,15 @@ This project combines cryptography and steganography to provide a secure way of 
 ### 🖥️ Encryption Process:
 ![Encryption Demo](assets/encryption_demo.png)
 
+🔒 **Encrypted Popup:**
+![Encrypted Popup](assets/encrypted_popup.png)
+
 ### 🔍 Decryption Process:
 ![Decryption Demo](assets/decryption_demo.png)
+
+🔓 **Decrypted Popup:**
+![Decrypted Popup](assets/decrypted_popup.png)
+
 
 ## 📥 Installation
 ### Prerequisites
