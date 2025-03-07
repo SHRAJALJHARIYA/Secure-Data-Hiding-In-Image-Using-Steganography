@@ -1,4 +1,5 @@
 import customtkinter
+import os
 from PIL import Image, ImageTk
 from Encrypt import upload_image_encrypt, encrypt_message
 from Decrypt import upload_image_decrypt, decrypt_message
@@ -8,7 +9,6 @@ customtkinter.set_default_color_theme("green")
 
 root = customtkinter.CTk()
 root.geometry("500x600")
-root.iconbitmap("logo.ico")
 root.title("Secure Data Hiding In Image Using Stegnography")
 
 tabview = customtkinter.CTkTabview(master=root, width=400, height=500)
@@ -77,3 +77,4 @@ copyright_label.pack(side="bottom", pady=5)
 
 
 root.mainloop()
+#main updated
