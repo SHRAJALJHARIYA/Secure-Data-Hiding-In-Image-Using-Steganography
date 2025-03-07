@@ -39,3 +39,4 @@ def encrypt_message(entry_image_encrypt, entry_message_encrypt, entry_key_encryp
         messagebox.showinfo("Success", f"Message encrypted and saved as {output_path}")
     except Exception as e:
         messagebox.showerror("Error", str(e))
+#updated Encrpt
