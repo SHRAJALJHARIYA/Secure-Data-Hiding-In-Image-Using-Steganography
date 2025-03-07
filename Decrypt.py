@@ -1,3 +1,5 @@
+
+import numpy as np
 from tkinter import filedialog, messagebox
 from PIL import Image
 
@@ -11,24 +13,34 @@ def upload_image_decrypt(entry_image_decrypt, show_preview, image_preview_decryp
 def decrypt_message(entry_image_decrypt, entry_key_decrypt):
     image_path = entry_image_decrypt.get()
     key = entry_key_decrypt.get()
+    
     if not image_path or not key:
         messagebox.showerror("Error", "All fields are required!")
         return
     
     try:
+        # Load image using NumPy for better performance
         img = Image.open(image_path)
-        width, height = img.size
-        binary_message = ""
+        img_array = np.array(img)
 
-        for y in range(height):
-            for x in range(width):
-                r, g, b = img.getpixel((x, y))
-                binary_message += str(r & 1)
+        # Extract LSBs from the red channel
+        r_channel = img_array[:, :, 0]  # Extract red channel
+        binary_message = np.unpackbits(r_channel).astype(str)  # Get LSBs
+        binary_message = "".join(binary_message[7::8])  # Take LSBs only
+        
+        # Convert binary to text and stop early
+        chars = []
+        for i in range(0, len(binary_message), 8):
+            char_bin = binary_message[i:i+8]
+            char = chr(int(char_bin, 2))
+            if char == "#":  # Stop when delimiter starts
+                if "".join(chars[-2:]) == "##":  
+                    break
+            chars.append(char)
 
-        decoded_chars = [binary_message[i:i+8] for i in range(0, len(binary_message), 8)]
-        extracted_text = "".join([chr(int(b, 2)) for b in decoded_chars])
-        extracted_text = extracted_text.split("###")[0]
+        extracted_text = "".join(chars[:-2])  # Remove end marker
 
         messagebox.showinfo("Decrypted Message", extracted_text)
+
     except Exception as e:
         messagebox.showerror("Error", str(e))
